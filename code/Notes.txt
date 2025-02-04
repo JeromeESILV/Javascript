@@ -1,0 +1,113 @@
+x = ####
+works as a global declaration will remain stored until the end of code
+
+var x = ###
+works as a local declaratio meaning it will be 'forgotten' by the ned of a function
+
+let x = ###
+will be forgotten after conditions are set
+
+const x = ###
+An unchainchable variable
+
+CLOSURES:
+You can have the machine save in memory a function and all of its children variable by indenting it properly in line with a callback outside of the functions' scope.
+    function creerFonction() {
+    var nom = "Mozilla";
+    function afficheNom() {
+    console.log(nom);
+    }
+    return afficheNom;
+    }
+    var maFonction = creerFonction();
+    maFonction();
+
+for loop : IN for objects OFF for arrays
+
+OBJECTS:
+There are at least 5 object types:
+    * Arrays
+    * Dates
+    * Regular Expressions (Regex)
+    * Maps and WeakMaps
+    * Sets and WeakSets
+
+EXCEPTIONS:
+handling errors yourself
+try{} --- lets you test a block of code for errors
+catch(err){} --- lets you handle the errors
+throw --- lets you creat customised errors
+finally --- the default exit regardless of errors
+6 Types of Exceptions:
+    EvalError : erreur dans un eval()
+    RangeError : utilisation d’un nombre en dehors 
+    des valeurs possibles
+    ReferenceError : utilisation d’une variable non 
+    déclarée ou hors scope
+    SyntaxError : erreur de syntaxe dans le code 
+    soumis à un eval()
+    TypeError : utilisation d’une fonction n’appartenant 
+    pas au type
+    URIError : utilisation de caractères illégaux dans 
+    une fonction URI
+
+PROTOTYPES:
+Prototypes are object declaring functions that save the functions contents to a var.
+    myObject.prototype.p1 = “foo”;
+    myObject.prototype.m1 = function() {}
+Three types of prototypes Public, Private and Priviliged ones.
+     Type.prototype.name = function() {
+        this.m1 = function() {}; }
+
+
+PROMISES:
+Promises are objects which allows the execution of operations asychromatically.
+At the end of promises it will either Resolve or Reject, defined by user.
+let p = Promise((resolve, reject) => { //Declare variable to be a promise
+    let a = 1 + 1 //put whatever code you want to run
+    if(a == 2) {
+        resole("Success") //message = Success
+    }else {
+        reject("Failed") // message = Failed
+    }
+})
+
+p.then((message) => { // ".then" function will occur if promise Resolves
+    console.log("Things will happen if Resolved successfully" + message)
+}).catch((message) => { //".catch" function will occur if promise is Rejected
+    console.log("Things will happen if promise is rejected" + message)
+})
+
+WEB APIS:
+API = Application Programming Interface
+DOM API = Document Object Model API
+=> a way to visualise an HTML or XML Document in a web tree format.
+can manipulate "Nodes" (classes) and their parent or children useing DOM manipulation.
+    element.parentNode{}
+    element.childNode{}
+    element.attributes{}
+    ...
+
+EVENT:
+    <div onhover=”myFunc();”/> => exécute une fonction au hover
+
+    {element}.onClick = func => exécute une fonction au click
+
+    {elTarget}.addEventListener(“monEvent”, func) => exécute func lors de l’événement “monEvent”
+
+    {elTarget}.removeEventListener(“monEvent”, func) => supprimer func lors de l’événement “monEvent”
+
+    {elTarget}.dispatchEvent(event) => diffuse l’événement event à l’élément
+
+    event.preventDefault() => annule l’effet d’un event ex: annuler un click, une saisie clavier
+
+    event.stopPropagation() => annule la propagation d’un event vers l’élément target
+    
+    Création Var event = new Event(“customName”); => crée un event de type customName
+
+    Var event = new CustomEvent(“customName”, {detail: customData}); => crée un event de type customName avec des données complémentaires
+
+STORAGE API:
+    LocalStorage => Persistence: infini - Scope: hostname/protocole - Type: String
+    SessionStorage => Persistence: session - Scope: hostname/protocole - Type: String
+    Cookie => Persistence: date d’expiration - Scope: document - Type: String
